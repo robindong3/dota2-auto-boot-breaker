@@ -180,14 +180,27 @@ def main():
 
             tag = "FROZEN" if frozen else "LIVE"
             n = len(samples[mode])
-            cv2.putText(
-                vis, f"[{tag}] {mode.upper()} pts={n} click=set Shift=add",
-                (8, 14), cv2.FONT_HERSHEY_SIMPLEX, 0.38,
-                (0, 200, 255) if frozen else (0, 255, 255), 1, cv2.LINE_AA)
-            cv2.putText(vis,
-                        "B=ball P=paddle 1=replay 2=play  F2=freeze U R L S Q",
-                        (8, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.36, (180, 220, 180), 1,
-                        cv2.LINE_AA)
+            lines = [
+                f"[{tag}] {mode.upper()} pts={n}",
+                "B  ball",
+                "P  paddle",
+                "1  replay",
+                "2  play",
+                "click=set Shift=add",
+                "U  undo",
+                "R  reset",
+                "L  preset",
+                "F2 freeze",
+                "S  save",
+                "Q  quit",
+            ]
+            for i, ln in enumerate(lines):
+                if i == 0:
+                    col = (0, 200, 255) if frozen else (0, 255, 255)
+                else:
+                    col = (180, 220, 180)
+                cv2.putText(vis, ln, (8, 16 + i * 15),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.34, col, 1, cv2.LINE_AA)
             cv2.imshow(WIN, vis)
             k = cv2.waitKey(15) & 0xFF
             if toggle or k == ord(" "):
