@@ -19,6 +19,9 @@ python gui.py
 
 Three buttons on the panel: **Calibrate / Sample colors / Run(F8)**.
 
+> **Tip:** set the game's `fps_max` to **30** (Dota2 console: `fps_max 30`). On weaker
+> PCs use **20** for better bot performance — adjust per your machine.
+
 ### First-time setup
 
 1. **Calibrate**: a full-screen screenshot pops up; drag a box around the game area, press Enter.
@@ -81,6 +84,9 @@ python gui.py
 ```
 
 面板上三个按钮：**校准 / 采色 / 运行(F8)**。
+
+> **提示：** 把游戏的 `fps_max` 设为 **30**（Dota2 控制台输入 `fps_max 30`）；
+> 配置较弱的电脑可设 **20** 以获得更好的运行表现，按自己机器情况调整。
 
 ### 第一次使用
 
