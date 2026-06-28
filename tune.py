@@ -215,20 +215,16 @@ def main():
                 break
             elif k == ord("b"):
                 mode = "ball"
-                frozen = False
-                print(">> 采球模式 (playfield)")
+                print(">> 采球")
             elif k == ord("p"):
                 mode = "paddle"
-                frozen = False
-                print(">> 采挡板模式 (playfield)")
+                print(">> 采挡板")
             elif k == ord("1"):
                 mode = "click1"
-                frozen = False
-                print(">> 采'再玩一次'按钮颜色 (区域)")
+                print(">> 采'再玩一次'按钮")
             elif k == ord("2"):
                 mode = "click2"
-                frozen = False
-                print(">> 采'游玩'按钮颜色 (区域)")
+                print(">> 采'游玩'按钮")
             elif k == ord("u"):
                 if samples[mode]:
                     samples[mode].pop()
