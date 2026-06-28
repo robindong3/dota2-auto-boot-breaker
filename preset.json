@@ -1,0 +1,10 @@
+{
+  "ball_hsv_lo": [2, 170, 51],
+  "ball_hsv_hi": [10, 220, 101],
+  "paddle_hsv_lo": [157, 195, 6],
+  "paddle_hsv_hi": [173, 255, 126],
+  "click1_hsv_lo": [124, 77, 20],
+  "click1_hsv_hi": [132, 127, 70],
+  "click2_hsv_lo": [124, 77, 15],
+  "click2_hsv_hi": [132, 127, 65]
+}

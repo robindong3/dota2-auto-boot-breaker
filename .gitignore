@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# PyInstaller 打包产物
+build/
+dist/
+*.spec
+
+# 临时
+*.log
+
+# editor temp files
+*.tmp.*

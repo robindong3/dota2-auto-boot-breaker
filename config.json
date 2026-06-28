@@ -1,0 +1,77 @@
+{
+  "region": {
+    "left": 866,
+    "top": 215,
+    "width": 823,
+    "height": 1137
+  },
+  "ball_hsv_lo": [
+    2,
+    170,
+    51
+  ],
+  "ball_hsv_hi": [
+    10,
+    220,
+    101
+  ],
+  "ball_use_motion": false,
+  "paddle_hsv_lo": [
+    157,
+    195,
+    6
+  ],
+  "paddle_hsv_hi": [
+    173,
+    255,
+    126
+  ],
+  "proc_scale": 1.0,
+  "ball_min_area": 6,
+  "ball_max_area": 1500,
+  "paddle_strip_frac": 0.33,
+  "deadzone": 14,
+  "stop_zone": 6,
+  "smooth_alpha": 1.0,
+  "target_alpha": 1.0,
+  "min_vy": 1.0,
+  "bright_thresh": 110,
+  "predict": false,
+  "key_method": "directinput",
+  "key_left": "a",
+  "key_right": "d",
+  "debug": true,
+  "auto_serve": true,
+  "serve_key": "space",
+  "serve_interval_s": 5.0,
+  "auto_click": true,
+  "auto_click_interval_s": 0.8,
+  "auto_click_cooldown_s": 1.5,
+  "min_button_area": 2000,
+  "click1_hsv_lo": [
+    124,
+    77,
+    20
+  ],
+  "click1_hsv_hi": [
+    132,
+    127,
+    70
+  ],
+  "click2_hsv_lo": [
+    124,
+    77,
+    15
+  ],
+  "click2_hsv_hi": [
+    132,
+    127,
+    65
+  ],
+  "pulse": false,
+  "pulse_on_ms": 50,
+  "pulse_off_ms": 10,
+  "lead_px": 0,
+  "lead_eps": 1.0,
+  "ball_max_jump": 220
+}
