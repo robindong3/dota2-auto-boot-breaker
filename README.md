@@ -1,7 +1,73 @@
-# 打砖块助手 (breakout-bot)
+# Dota2 Boot Breaker auto-bot
 
-实时识别屏幕上的「球(靴子)」和「挡板(推车)」，自动按 A/D 让挡板追球，并能自动发球、
-自动点「再玩一次/游玩」按钮，全自动刷分。带一个 PySide6 控制面板。
+A bot for the Dota2 "Boot Breaker" (破牢之靴) brick-breaker minigame. It detects the
+ball (boot) and paddle (cart) on screen in real time, moves the paddle with A/D to
+track the ball, auto-serves, and auto-clicks the "Play again / Play" buttons — fully
+automatic score grinding. Comes with a small PySide6 control panel.
+
+> For your own single-player / casual games only. Do NOT use on anti-cheat-protected
+> competitive online games.
+
+## Run from source
+
+Requires Python 3.10+.
+
+```bash
+pip install -r requirements.txt
+python gui.py
+```
+
+Three buttons on the panel: **Calibrate / Sample colors / Run(F8)**.
+
+### First-time setup
+
+1. **Calibrate**: a full-screen screenshot pops up; drag a box around the game area, press Enter.
+2. **Sample colors**: in the tune window, press **L** first to load the bundled preset
+   (preset.json) and see if detection is good. The colors are the same for everyone playing
+   this game, so usually pressing L is enough — only the region needs per-machine calibration.
+3. Click back into the game, press **F8** to start. Tick `Show preview` to see detection.
+
+### Tune window keys
+
+| Key | Action |
+|---|---|
+| B / P | sample ball / paddle color |
+| 1 / 2 | sample "Play again" / "Play" button color |
+| Click / Shift+Click | pick color (replace) / add color |
+| U / R | undo / reset current target |
+| L / S | load preset / save |
+| F2 | freeze frame (when motion is too fast to click) |
+| Q or X | quit |
+
+### Common settings (config.json)
+
+| Key | Purpose |
+|---|---|
+| `deadzone` / `stop_zone` | thresholds to start / stop moving (hysteresis anti-jitter) |
+| `lead_px` | lead the paddle in the ball's direction of motion (0 = track ball directly) |
+| `pulse` / `pulse_on_ms` / `pulse_off_ms` | pulsed key presses (fights paddle inertia); false = hold |
+| `auto_serve` / `serve_interval_s` | auto-serve / interval in seconds |
+| `auto_click` / `min_button_area` | auto-click buttons / min blob size (avoids misclicks) |
+| `key_method` | `directinput` or `keyboard`; switch if keys don't register |
+
+## Files
+
+- `gui.py` control panel (main entry)
+- `engine.py` detection + control core
+- `tune.py` color-sampling tool
+- `calibrate.py` select game region
+- `autoclick.py` color-based auto-click
+- `bot.py` command-line version (no GUI, hotkeys F8/F9)
+- `config.json` config (region is per-user, must be calibrated)
+- `preset.json` preset colors (shared across players of the same game)
+
+---
+
+# 打砖块助手 (Dota2 破牢之靴)
+
+Dota2「破牢之靴」打砖块小游戏的自动脚本。实时识别屏幕上的「球(靴子)」和「挡板(推车)」，
+自动按 A/D 让挡板追球，并能自动发球、自动点「再玩一次/游玩」按钮，全自动刷分。
+带一个 PySide6 控制面板。
 
 > 仅用于自己玩的单机/休闲小游戏。带反作弊的联网竞技游戏请勿使用。
 
